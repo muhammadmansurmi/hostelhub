@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Maintenance Requests</title>
+</head>
+<body>
+    <h2>All Requests ({{ requests|length }})</h2>
+
+    {% for r in requests %}
+        <p><strong>Room:</strong> {{ r.room_number }}</p>
+        <p><strong>Issue:</strong> {{ r.issue_type }}</p>
+        <p><strong>Description:</strong> {{ r.description }}</p>
+        <p><em>{{ r.timestamp }}</em></p>
+        <hr>
+    {% empty %}
+        <p>No requests found.</p>
+    {% endfor %}
+</body>
+</html>
